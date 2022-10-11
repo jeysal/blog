@@ -36,7 +36,7 @@ a {
 /* document */
 
 body {
-  max-inline-size: 80ch;
+  max-inline-size: min(80ch, 90vw);
   margin-inline: auto;
 
   background-color: var(--bg-color);
