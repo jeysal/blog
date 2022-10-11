@@ -63,7 +63,14 @@ h1 {
 p {
   margin-block: 0.5em;
 }
+p a {
+  text-decoration: underline;
+}
 
+code {
+  border-radius: 0.5em;
+  font-family: monospace;
+}
 
 /* blog post item */
 

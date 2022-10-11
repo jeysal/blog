@@ -1,0 +1,4 @@
+@import "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/base16/summerfruit-light.min.css"
+  (prefers-color-scheme: light);
+@import "https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/base16/isotope.min.css"
+  (prefers-color-scheme: dark);
