@@ -1,0 +1,21 @@
+li[is="blog-post-item"] > * {
+  display: block;
+  margin-block: 0.5em;
+}
+
+li[is="blog-post-item"] p {
+  max-height: 4em;
+  overflow-y: hidden;
+
+  mask-image: var(--mask-image);
+  -webkit-mask-image: var(--mask-image);
+  --mask-image: linear-gradient(
+    var(--bg-color) 0%,
+    var(--bg-color) 50%,
+    transparent 100%
+  );
+}
+
+li:not(:empty) + li[is="blog-post-item"]:not(:empty) {
+  border-block-start: 1px solid var(--fg-color);
+}
