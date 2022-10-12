@@ -93,7 +93,14 @@ class BlogPostItemElement extends HTMLLIElement {
 
     const timeElement = document.createElement("time");
     timeElement.setAttribute("datetime", publishedDate.toISOString());
-    timeElement.textContent = publishedDate.toLocaleString();
+    timeElement.textContent = new Intl.DateTimeFormat("en", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      weekday: "long",
+      hour: "numeric",
+      minute: "numeric",
+    }).format(publishedDate);
 
     const linkElement = document.createElement("a");
     linkElement.setAttribute("href", src);
