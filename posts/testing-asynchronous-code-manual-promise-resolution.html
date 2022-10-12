@@ -277,12 +277,13 @@
         operation is completing.
       </p>
       <p>
-        `toHaveBeenCalled` assertions on the mocked network operations become
-        superfluous (we keep the `toHaveBeenCalledWith` to verify correct
-        arguments). If resolving the promise leads to an observable state change
-        in the component, it must have called our mock to obtain the promise
-        anyway; there is no other way it could have noticed the promise
-        resolution and changed its state.
+        <code>toHaveBeenCalled</code> assertions on the mocked network
+        operations become superfluous (we keep the
+        <code>toHaveBeenCalledWith</code> to verify correct arguments). If
+        resolving the promise leads to an observable state change in the
+        component, it must have called our mock to obtain the promise anyway;
+        there is no other way it could have noticed the promise resolution and
+        changed its state.
       </p>
       <h3>Reference code sample</h3>
       <p>
