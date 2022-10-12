@@ -52,39 +52,37 @@ h4,
 h5,
 h6 {
   font-family: serif;
-  margin-block: 1ex;
+  margin-block: 0.5em;
 }
 
 h1 {
-  padding-block-end: 0.5ex;
+  padding-block-end: 0.25em;
   border-block-end: 1px solid var(--accent-color);
 }
 
 p {
-  margin-block: 1ex;
+  margin-block: 0.5em;
 }
 
-li {
-  margin-block: 1ex;
-}
 
 /* blog post item */
 
 li[is="blog-post-item"] > * {
   display: block;
+  margin-block: 0.5em;
 }
 
 li[is="blog-post-item"] p {
-  max-height: 8ex;
+  max-height: 4em;
   overflow-y: hidden;
 
+  mask-image: var(--mask-image);
+  -webkit-mask-image: var(--mask-image);
   --mask-image: linear-gradient(
     var(--bg-color) 0%,
     var(--bg-color) 50%,
     transparent 100%
   );
-  mask-image: var(--mask-image);
-  -webkit-mask-image: var(--mask-image);
 }
 
 li:not(:empty) + li[is="blog-post-item"]:not(:empty) {
