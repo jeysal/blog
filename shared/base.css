@@ -3,6 +3,7 @@
 :root {
   --bg-color: white;
   --fg-color: black;
+  --accent-color: #ff7800;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -69,7 +70,7 @@ h6 {
 
 h1 {
   padding-block-end: 0.25em;
-  border-block-end: 1px solid var(--fg-color);
+  border-block-end: 1px solid var(--accent-color);
 }
 
 p {
