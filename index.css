@@ -1,21 +1,13 @@
 /* layout */
 
 body > nav {
-  grid-area: 2 / main;
-}
-body > main {
-  grid-area: 3 / main;
+  grid-area: nav;
 }
 
 @media (min-width: 1280px) {
   body > nav {
-    grid-area: 1 / right-gutter;
     justify-self: end;
-    align-self: center;
-    padding: 1em;
-  }
-  body > main {
-    grid-area: 2 / main;
+    padding: 16px;
   }
 }
 
@@ -25,13 +17,13 @@ nav ul {
   display: grid;
   grid-auto-flow: column;
   justify-content: start;
-  gap: 1em;
+  gap: 16px;
 }
 nav ul li {
   display: flex;
 }
 nav ul li img {
   display: flex;
-  width: 2em;
-  height: 2em;
+  width: 32px;
+  height: 32px;
 }
