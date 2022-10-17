@@ -8,7 +8,6 @@ import {
   map,
   withLatestFrom,
   shareReplay,
-  timer,
   takeUntil,
 } from "https://cdn.jsdelivr.net/npm/rxjs@7.5.7/+esm";
 import { fromFetch } from "https://cdn.jsdelivr.net/npm/rxjs@7.5.7/fetch/+esm";
@@ -73,14 +72,12 @@ class BlogPostItemElement extends HTMLLIElement {
   }
 
   connectedCallback() {
+    this.#loadingIndicatorSub = this.#src$.subscribe(this.showLoadingIndicator);
     this.#postSub = this.#post$.subscribe(this.updatePost, this.reportError);
-    this.#loadingIndicatorSub = timer(1000)
-      .pipe(takeUntil(this.#post$), switchMapTo(this.#src$))
-      .subscribe(this.showLoadingIndicator);
   }
   disconnectedCallback() {
-    this.#postSub.unsubscribe();
     this.#loadingIndicatorSub.unsubscribe();
+    this.#postSub.unsubscribe();
   }
 
   updatePost = ({ title, textPreview, publishedDate, src }) => {
