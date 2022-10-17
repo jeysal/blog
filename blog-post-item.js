@@ -3,6 +3,7 @@
 import {
   BehaviorSubject,
   switchMap,
+  switchMapTo,
   throwError,
   map,
   withLatestFrom,
@@ -74,7 +75,7 @@ class BlogPostItemElement extends HTMLLIElement {
   connectedCallback() {
     this.#postSub = this.#post$.subscribe(this.updatePost, this.reportError);
     this.#loadingIndicatorSub = timer(1000)
-      .pipe(takeUntil(this.#post$))
+      .pipe(takeUntil(this.#post$), switchMapTo(this.#src$))
       .subscribe(this.showLoadingIndicator);
   }
   disconnectedCallback() {
@@ -108,8 +109,14 @@ class BlogPostItemElement extends HTMLLIElement {
 
     this.append(linkElement);
   };
-  showLoadingIndicator = () => {
-    this.textContent = "Loading blog post…";
+  showLoadingIndicator = (src) => {
+    this.textContent = "";
+
+    const linkElement = document.createElement("a");
+    linkElement.setAttribute("href", src);
+    linkElement.textContent = `Loading post details for ${src}`;
+
+    this.append(linkElement);
   };
   reportError = (error) => {
     this.textContent = String(error);
