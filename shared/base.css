@@ -44,7 +44,7 @@ body {
     / var(--main-width);
   justify-content: center;
   --main-width: min(80ch, 90vw);
-  gap: 8px;
+  gap: 4px;
   /* Always show scroll bar to avoid horizontal jumps between pages with and without */
   overflow-y: scroll;
 
