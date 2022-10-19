@@ -3,14 +3,16 @@
 import {
   BehaviorSubject,
   switchMap,
-  switchMapTo,
   throwError,
   map,
   withLatestFrom,
   shareReplay,
-  takeUntil,
 } from "https://cdn.jsdelivr.net/npm/rxjs@7.5.7/+esm";
 import { fromFetch } from "https://cdn.jsdelivr.net/npm/rxjs@7.5.7/fetch/+esm";
+import {
+  getPublishedDate,
+  serializeTimeElement,
+} from "./utils/published-time.js";
 
 const ATTRIBUTES = {
   SRC: "src",
@@ -44,14 +46,7 @@ class BlogPostItemElement extends HTMLLIElement {
         if (title == null)
           throw new Error(`Failed to get title for blog post from '${src}'.`);
 
-        let publishedDate = post.head
-          .querySelector('meta[property="article:published_time"]')
-          ?.getAttribute("content");
-        if (publishedDate == null)
-          throw new Error(
-            `Failed to get published date for blog post from '${src}'.`
-          );
-        publishedDate = new Date(publishedDate);
+        const publishedDate = getPublishedDate(post);
 
         const textPreview = post.body.querySelector("p")?.innerText;
         if (textPreview == null)
@@ -89,16 +84,7 @@ class BlogPostItemElement extends HTMLLIElement {
     const textPreviewElement = document.createElement("p");
     textPreviewElement.textContent = textPreview;
 
-    const timeElement = document.createElement("time");
-    timeElement.setAttribute("datetime", publishedDate.toISOString());
-    timeElement.textContent = new Intl.DateTimeFormat("en", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-      weekday: "long",
-      hour: "numeric",
-      minute: "numeric",
-    }).format(publishedDate);
+    const timeElement = serializeTimeElement(publishedDate);
 
     const linkElement = document.createElement("a");
     linkElement.setAttribute("href", src);
