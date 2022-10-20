@@ -4,6 +4,8 @@
 
 The source of [my personal blog](https://blog.jeys.al).
 
+## Implementation notes
+
 To implement this, I messed around with an old-school no-tooling (just plain source files served by a web server) approach.
 It uses native ESM. The external RxJS library is pulled in from [jsDelivr](https://www.jsdelivr.com/) using its [esm.run](https://www.jsdelivr.com/esm) feature.
 
@@ -21,6 +23,10 @@ Writing custom elements directly is cumbersome and error-prone. Fetching and par
 This was a fun experiment and challenge, I tried things I had never done before and I learned new things.
 But this is not a good approach to build a blog with good performance and stability, nor is it a fast way to get a blog up and running.
 It is, however, good enough to keep for my little blog, and perhaps fun and novel for people to look at.
+
+## RSS
+
+`index.rss` is generated using [`html-to-rss`](https://crates.io/crates/html-to-rss). Categories, which are only present in the RSS feed, are added manually.
 
 ## License
 
