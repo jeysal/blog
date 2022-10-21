@@ -5,7 +5,7 @@
     <link>https://blog.jeys.al/</link>
     <description>Tim Seckinger&apos;s blog about coding and technology.</description>
     <language>en-US</language>
-    <lastBuildDate>Thu, 20 Oct 2022 01:41:42 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Oct 2022 17:12:38 +0000</lastBuildDate>
     <image>
       <url>https://blog.jeys.al/favicon.png</url>
       <title>Tim Seckinger&apos;s blog</title>
@@ -14,12 +14,13 @@
     <item>
       <title>Testing asynchronous code: Manual promise resolution</title>
       <link>https://blog.jeys.al/posts/testing-asynchronous-code-manual-promise-resolution.html</link>
+      <description><![CDATA[Testing asynchronous code with ease by capturing promise resolution functions and manually resolving.]]></description>
       <category>Testing</category>
       <category>JavaScript</category>
       <guid>https://blog.jeys.al/posts/testing-asynchronous-code-manual-promise-resolution.html</guid>
       <pubDate>Wed, 12 Oct 2022 19:08:10 +0200</pubDate>
       <content:encoded><![CDATA[
-
+      
       <p>
         Asynchronicity is one of the harder problems to deal with trying to
         write correct code, and also trying to test it. Yet it constantly comes
@@ -278,13 +279,14 @@
     <item>
       <title>External post: Mirroring our Medium blog to YLD.io</title>
       <link>https://blog.jeys.al/posts/external-post-mirroring-our-medium-blog-to-yld-io.html</link>
+      <description><![CDATA[External post: Mirroring our Medium blog to YLD.io]]></description>
       <category>External</category>
       <category>JavaScript</category>
       <category>MDX</category>
       <guid>https://blog.jeys.al/posts/external-post-mirroring-our-medium-blog-to-yld-io.html</guid>
       <pubDate>Mon, 23 Mar 2020 20:03:44 +0000</pubDate>
       <content:encoded><![CDATA[
-
+      
       <p>
         I wrote a post about the work we did for
         <a target="_blank" rel="noopener noreferrer" href="https://yld.io">YLD</a>
