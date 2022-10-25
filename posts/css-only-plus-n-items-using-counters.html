@@ -48,6 +48,14 @@
     <h1><a href="/">Tim Seckinger's blog</a></h1>
     <main>
       <h2>CSS-only &quot;+n items&quot; using counters</h2>
+      <noscript>
+        <p>
+          <strong>Note:</strong> This post contains elements that require
+          JavaScript. While I try to provide fallbacks for RSS and third-party
+          sites within reason, the best reading experience will be on my blog
+          website in a web browser with JavaScript enabled.
+        </p>
+      </noscript>
       <p>
         Even if you've been writing CSS frequently for many years, there's a
         good chance you've never heard of
@@ -121,6 +129,30 @@
       <script>
         eval(document.querySelector("#rigid-js-impl").textContent);
       </script>
+      <noscript>
+        <figure>
+          <figcaption>Output on a large screen:</figcaption>
+          <img
+            src="/posts/css-only-plus-n-items-using-counters/rigid-js-impl-output-large-screen-1.png"
+            alt="Four tags arranged horizontally, occupying about half the horizontal space available"
+          />
+          <img
+            src="/posts/css-only-plus-n-items-using-counters/rigid-js-impl-output-large-screen-2.png"
+            alt='Five tags and a pseudo-tag reading "+3 more tag(s)" arranged horizontally, together occupying the entire horizontal space available'
+          />
+        </figure>
+        <figure>
+          <figcaption>Output on a small screen:</figcaption>
+          <img
+            src="/posts/css-only-plus-n-items-using-counters/rigid-js-impl-output-small-screen-1.png"
+            alt="Four tags arranged horizontally, occupying not quite the entire horizontal space available"
+          />
+          <img
+            src="/posts/css-only-plus-n-items-using-counters/rigid-js-impl-output-small-screen-2.png"
+            alt='Five tags, each so small that everything after the first letter is cropped with an ellipsis character, and a pseudo-tag reading "+3 more tag(s)", arranged horizontally, together occupying the entire horizontal space available'
+          />
+        </figure>
+      </noscript>
       <p>
         In case you're curious because there's already a lot going on just to
         nicely show all tags on one line: The styles for this are as follows,
@@ -331,6 +363,30 @@
       <script>
         eval(document.querySelector("#counter-impl").textContent);
       </script>
+      <noscript>
+        <figure>
+          <figcaption>Output on a large screen:</figcaption>
+          <img
+            src="/posts/css-only-plus-n-items-using-counters/counter-impl-output-large-screen-1.png"
+            alt="Four tags arranged horizontally, occupying about half the horizontal space available"
+          />
+          <img
+            src="/posts/css-only-plus-n-items-using-counters/counter-impl-output-large-screen-2.png"
+            alt='Five tags and a pseudo-tag reading "+3 more tag(s)" arranged horizontally, together occupying the entire horizontal space available'
+          />
+        </figure>
+        <figure>
+          <figcaption>Output on a small screen:</figcaption>
+          <img
+            src="/posts/css-only-plus-n-items-using-counters/counter-impl-output-small-screen-1.png"
+            alt='Two tags and a pseudo-tag reading "+2 more tag(s)" arranged horizontally, together occupying not quite the entire horizontal space available'
+          />
+          <img
+            src="/posts/css-only-plus-n-items-using-counters/counter-impl-output-small-screen-2.png"
+            alt='Two tags and a pseudo-tag reading "+6 more tag(s)" arranged horizontally, together occupying the entire horizontal space available'
+          />
+        </figure>
+      </noscript>
       <h3>Final notes</h3>
       <p>
         It is arguably nonsensical to ever show <samp>+1 more tag(s)</samp>,
