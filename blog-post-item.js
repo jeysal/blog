@@ -5,7 +5,6 @@ import {
   switchMap,
   throwError,
   map,
-  withLatestFrom,
   shareReplay,
 } from "https://cdn.jsdelivr.net/npm/rxjs@7.5.7/+esm";
 import { fromFetch } from "https://cdn.jsdelivr.net/npm/rxjs@7.5.7/fetch/+esm";
@@ -15,27 +14,26 @@ import {
 } from "./utils/published-time.js";
 
 const ATTRIBUTES = {
-  SRC: "src",
+  HREF: "href",
 };
-class BlogPostItemElement extends HTMLLIElement {
-  #src$;
+class BlogPostItemElement extends HTMLAnchorElement {
+  #href$;
   #post$;
   #postSub;
-  #loadingIndicatorSub;
 
   constructor() {
     super();
-    this.#src$ = new BehaviorSubject(this.getAttribute(ATTRIBUTES.SRC));
-    this.#post$ = this.#src$.pipe(
-      switchMap((src) =>
-        fromFetch(src, {
+    this.#href$ = new BehaviorSubject(this.getAttribute(ATTRIBUTES.HREF));
+    this.#post$ = this.#href$.pipe(
+      switchMap((href) =>
+        fromFetch(href, {
           accept: "text/html",
           selector: (res) =>
             res.ok
               ? res.text()
               : throwError(
                   new Error(
-                    `Failed to get blog post from '${src}'. Status code ${res.status}.`
+                    `Failed to get blog post from '${href}'. Status code ${res.status}.`
                   )
                 ),
         })
@@ -44,14 +42,14 @@ class BlogPostItemElement extends HTMLLIElement {
       map((post) => {
         const title = post.head.querySelector("title")?.innerText;
         if (title == null)
-          throw new Error(`Failed to get title for blog post from '${src}'.`);
+          throw new Error(`Failed to get title for blog post from '${href}'.`);
 
         const publishedDate = getPublishedDate(post);
 
         const textPreview = post.body.querySelector("p")?.innerText;
         if (textPreview == null)
           throw new Error(
-            `Failed to get text preview for blog post from '${src}'.`
+            `Failed to get text preview for blog post from '${href}'.`
           );
 
         return {
@@ -60,22 +58,18 @@ class BlogPostItemElement extends HTMLLIElement {
           publishedDate,
         };
       }),
-      withLatestFrom(this.#src$),
-      map(([postData, src]) => ({ ...postData, src })),
       shareReplay(1)
     );
   }
 
   connectedCallback() {
-    this.#loadingIndicatorSub = this.#src$.subscribe(this.showLoadingIndicator);
     this.#postSub = this.#post$.subscribe(this.updatePost, this.reportError);
   }
   disconnectedCallback() {
-    this.#loadingIndicatorSub.unsubscribe();
     this.#postSub.unsubscribe();
   }
 
-  updatePost = ({ title, textPreview, publishedDate, src }) => {
+  updatePost = ({ title, textPreview, publishedDate }) => {
     this.textContent = "";
 
     const titleElement = document.createElement("h2");
@@ -86,20 +80,7 @@ class BlogPostItemElement extends HTMLLIElement {
 
     const timeElement = serializeTimeElement(publishedDate);
 
-    const linkElement = document.createElement("a");
-    linkElement.setAttribute("href", src);
-    linkElement.append(titleElement, textPreviewElement, timeElement);
-
-    this.append(linkElement);
-  };
-  showLoadingIndicator = (src) => {
-    this.textContent = "";
-
-    const linkElement = document.createElement("a");
-    linkElement.setAttribute("href", src);
-    linkElement.textContent = `Loading post details for ${src}`;
-
-    this.append(linkElement);
+    this.append(titleElement, textPreviewElement, timeElement);
   };
   reportError = (error) => {
     this.textContent = String(error);
@@ -110,8 +91,8 @@ class BlogPostItemElement extends HTMLLIElement {
   }
   attributeChangedCallback(name, _oldValue, newValue) {
     switch (name) {
-      case ATTRIBUTES.SRC:
-        this.#src$.next(newValue);
+      case ATTRIBUTES.HREF:
+        this.#href$.next(newValue);
         break;
       default:
         throw new Error(`Unknown attribute ${name}`);
@@ -120,4 +101,4 @@ class BlogPostItemElement extends HTMLLIElement {
 }
 
 import "https://cdn.jsdelivr.net/npm/@ungap/custom-elements@1.1.1/es.js";
-customElements.define("blog-post-item", BlogPostItemElement, { extends: "li" });
+customElements.define("blog-post-item", BlogPostItemElement, { extends: "a" });

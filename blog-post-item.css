@@ -1,9 +1,13 @@
-li[is="blog-post-item"] > * {
+li:not(:last-of-type):has(a[is="blog-post-item"]) {
+  border-block-end: 1px solid var(--fg-color);
+}
+
+li a[is="blog-post-item"] {
   display: block;
   margin-block: 0.5em;
 }
 
-li[is="blog-post-item"] p {
+li a[is="blog-post-item"] p {
   max-height: 4em;
   overflow-y: hidden;
 
@@ -16,6 +20,6 @@ li[is="blog-post-item"] p {
   );
 }
 
-li:not(:empty) + li[is="blog-post-item"]:not(:empty) {
-  border-block-start: 1px solid var(--fg-color);
+li a[is="blog-post-item"]:empty::before {
+  content: "Loading preview for " attr(href) "…";
 }
