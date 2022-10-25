@@ -46,7 +46,7 @@ class BlogPostItemElement extends HTMLAnchorElement {
 
         const publishedDate = getPublishedDate(post);
 
-        const textPreview = post.body.querySelector("p")?.innerText;
+        const textPreview = post.body.querySelector("h2 ~ p")?.innerText;
         if (textPreview == null)
           throw new Error(
             `Failed to get text preview for blog post from '${href}'.`
