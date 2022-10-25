@@ -5,7 +5,7 @@
     <link>https://blog.jeys.al/</link>
     <description>Tim Seckinger&apos;s blog about coding and technology.</description>
     <language>en-US</language>
-    <lastBuildDate>Tue, 25 Oct 2022 16:14:22 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Oct 2022 16:53:15 +0000</lastBuildDate>
     <image>
       <url>https://blog.jeys.al/favicon.png</url>
       <title>Tim Seckinger&apos;s blog</title>
@@ -22,12 +22,12 @@
       <content:encoded><![CDATA[
       
       <noscript>
-        &lt;p&gt;
-          &lt;strong&gt;Note:&lt;/strong&gt; This post contains contains elements that are
+        <p>
+          <strong>Note:</strong> This post contains contains elements that are
           formatted using JavaScript. While all content is readable without
           JavaScript, the best reading experience will be on my blog website in
           a web browser with JavaScript enabled.
-        &lt;/p&gt;
+        </p>
       </noscript>
       <p>
         Asynchronicity is one of the harder problems to deal with trying to
