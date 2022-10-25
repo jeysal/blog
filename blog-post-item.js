@@ -119,4 +119,5 @@ class BlogPostItemElement extends HTMLLIElement {
   }
 }
 
+import "https://cdn.jsdelivr.net/npm/@ungap/custom-elements@1.1.1/es.js";
 customElements.define("blog-post-item", BlogPostItemElement, { extends: "li" });
