@@ -5,7 +5,7 @@
     <link>https://blog.jeys.al/</link>
     <description>Tim Seckinger&apos;s blog about coding and technology.</description>
     <language>en-US</language>
-    <lastBuildDate>Tue, 25 Oct 2022 17:00:34 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Oct 2022 17:06:32 +0000</lastBuildDate>
     <image>
       <url>https://blog.jeys.al/favicon.png</url>
       <title>Tim Seckinger&apos;s blog</title>
@@ -37,7 +37,7 @@
       <p>
         Even if you've been writing CSS frequently for many years, there's a
         good chance you've never heard of
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter" rel="noopener noreferrer">counters</a>
+        <a target="_blank" rel="noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter">counters</a>
         before, despite them having been implemented for the better part of the
         century, since IE 8 and Chrome/Firefox 1. If you <em>have</em> heard of
         them before, there's a good chance it was for numbering headings, or
@@ -47,7 +47,7 @@
       <p>
         In this post, we'll look at a more exotic use case for CSS counters that
         I came up with
-        <a href="https://github.com/yldio/asap-hub/commit/a382c6b5a6411e2d987db141b546f83a66ffe276" rel="noopener noreferrer">a while ago in 2020</a>. We want to render a list, in this example a list of tags such as
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/yldio/asap-hub/commit/a382c6b5a6411e2d987db141b546f83a66ffe276">a while ago in 2020</a>. We want to render a list, in this example a list of tags such as
         those often shown as little pills on an article. But in case there are
         too many tags, perhaps hundreds of tags, that would excessively clutter
         the screen, we want to only show the first few — for now the first five
@@ -181,7 +181,7 @@
         additionally, using a CSS custom property, it lets the list know the
         total <code>--number-of-items</code>. I believe that unless something
         like
-        <a href="https://github.com/w3c/csswg-drafts/issues/4559" rel="noopener noreferrer"><code>sibling-{count,index}()</code></a>
+        <a target="_blank" rel="noopener noreferrer" href="https://github.com/w3c/csswg-drafts/issues/4559"><code>sibling-{count,index}()</code></a>
         is shipped, we cannot figure this out in CSS on its own.
       </p>
       <pre><code id="counter-impl" class="language-js" data-stripindent="">
@@ -261,7 +261,7 @@
         I would like to move the <code>counter-reset</code> to the list itself
         instead of the first item because it would be less clunky, but for some
         reason,
-        <a href="https://caniuse.com/mdn-css_properties_counter-reset_reset_does_not_affect_siblings" rel="noopener noreferrer">only Firefox</a>
+        <a target="_blank" rel="noopener noreferrer" href="https://caniuse.com/mdn-css_properties_counter-reset_reset_does_not_affect_siblings">only Firefox</a>
         has implemented initializing a counter and then using it in child
         elements at the time of writing this post.
       </p>
@@ -289,7 +289,7 @@
         is one important part of the CSS Lists and Counters spec that makes the
         number of remaining items actually correct and not always zero. Counter
         properties
-        <a href="https://www.w3.org/TR/css-lists-3/#counters-without-boxes" rel="noopener noreferrer">have no effect in elements that do not generate boxes</a>, such as those set to <code>display: none</code>. This is why our
+        <a target="_blank" rel="noopener noreferrer" href="https://www.w3.org/TR/css-lists-3/#counters-without-boxes">have no effect in elements that do not generate boxes</a>, such as those set to <code>display: none</code>. This is why our
         cropped items will leave the <code>remaining-items</code> counter
         untouched.
       </p>
@@ -297,7 +297,7 @@
       lists. Make sure to try it out on a small screen where up to two tags are
       shown, and a big screen where up to five tags are shown. Note that at the
       time of writing this post,
-      <a href="https://caniuse.com/css-container-queries" rel="noopener noreferrer">Firefox has not yet implemented container queries</a>, so it will always show you the five-tag version. If you'd like to use
+      <a target="_blank" rel="noopener noreferrer" href="https://caniuse.com/css-container-queries">Firefox has not yet implemented container queries</a>, so it will always show you the five-tag version. If you'd like to use
       this in production now and support Firefox, container queries have to be
       replaced with less flexible media queries.
       <script>
@@ -328,7 +328,7 @@
       </p>
       <p>
         If you use counters like in this blog post, watch the progress of
-        <a href="https://caniuse.com/mdn-css_properties_counter-reset_reversed" rel="noopener noreferrer"><code>reversed()</code> counters</a>. They could further simplify things.
+        <a target="_blank" rel="noopener noreferrer" href="https://caniuse.com/mdn-css_properties_counter-reset_reversed"><code>reversed()</code> counters</a>. They could further simplify things.
       </p>
       <p>
         It is pretty amazing that CSS can do this, and not only due to recent

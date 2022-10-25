@@ -60,8 +60,9 @@
         Even if you've been writing CSS frequently for many years, there's a
         good chance you've never heard of
         <a
-          href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter"
+          target="_blank"
           rel="noopener noreferrer"
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/counter"
           >counters</a
         >
         before, despite them having been implemented for the better part of the
@@ -74,8 +75,9 @@
         In this post, we'll look at a more exotic use case for CSS counters that
         I came up with
         <a
-          href="https://github.com/yldio/asap-hub/commit/a382c6b5a6411e2d987db141b546f83a66ffe276"
+          target="_blank"
           rel="noopener noreferrer"
+          href="https://github.com/yldio/asap-hub/commit/a382c6b5a6411e2d987db141b546f83a66ffe276"
           >a while ago in 2020</a
         >. We want to render a list, in this example a list of tags such as
         those often shown as little pills on an article. But in case there are
@@ -226,8 +228,9 @@
         total <code>--number-of-items</code>. I believe that unless something
         like
         <a
-          href="https://github.com/w3c/csswg-drafts/issues/4559"
+          target="_blank"
           rel="noopener noreferrer"
+          href="https://github.com/w3c/csswg-drafts/issues/4559"
           ><code>sibling-{count,index}()</code></a
         >
         is shipped, we cannot figure this out in CSS on its own.
@@ -310,8 +313,9 @@
         instead of the first item because it would be less clunky, but for some
         reason,
         <a
-          href="https://caniuse.com/mdn-css_properties_counter-reset_reset_does_not_affect_siblings"
+          target="_blank"
           rel="noopener noreferrer"
+          href="https://caniuse.com/mdn-css_properties_counter-reset_reset_does_not_affect_siblings"
           >only Firefox</a
         >
         has implemented initializing a counter and then using it in child
@@ -342,8 +346,9 @@
         number of remaining items actually correct and not always zero. Counter
         properties
         <a
-          href="https://www.w3.org/TR/css-lists-3/#counters-without-boxes"
+          target="_blank"
           rel="noopener noreferrer"
+          href="https://www.w3.org/TR/css-lists-3/#counters-without-boxes"
           >have no effect in elements that do not generate boxes</a
         >, such as those set to <code>display: none</code>. This is why our
         cropped items will leave the <code>remaining-items</code> counter
@@ -354,8 +359,9 @@
       shown, and a big screen where up to five tags are shown. Note that at the
       time of writing this post,
       <a
-        href="https://caniuse.com/css-container-queries"
+        target="_blank"
         rel="noopener noreferrer"
+        href="https://caniuse.com/css-container-queries"
         >Firefox has not yet implemented container queries</a
       >, so it will always show you the five-tag version. If you'd like to use
       this in production now and support Firefox, container queries have to be
@@ -401,8 +407,9 @@
       <p>
         If you use counters like in this blog post, watch the progress of
         <a
-          href="https://caniuse.com/mdn-css_properties_counter-reset_reversed"
+          target="_blank"
           rel="noopener noreferrer"
+          href="https://caniuse.com/mdn-css_properties_counter-reset_reversed"
           ><code>reversed()</code> counters</a
         >. They could further simplify things.
       </p>
