@@ -26,10 +26,12 @@
 
     <link rel="stylesheet" href="/index.css" />
     <link rel="stylesheet" href="/blog-post-item.css" />
+    <noscript>
+      <link rel="stylesheet" href="/blog-post-item-noscript.css" />
+    </noscript>
   </head>
   <body>
     <h1>Tim Seckinger's blog</h1>
-    <script src="/blog-post-item.js" type="module" async></script>
     <nav>
       <ul>
         <li>
@@ -56,6 +58,12 @@
       </ul>
     </nav>
     <main>
+      <script src="/blog-post-item.js" type="module" async></script>
+      <noscript
+        ><small
+          >Note: Without JavaScript, post previews cannot be loaded.</small
+        ></noscript
+      >
       <ol>
         <li>
           <a
@@ -67,7 +75,7 @@
           <a
             is="blog-post-item"
             href="/posts/external-post-mirroring-our-medium-blog-to-yld-io.html"
-          /></a>
+          ></a>
         </li>
       </ol>
     </main>
