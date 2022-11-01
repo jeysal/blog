@@ -26,7 +26,7 @@ It is, however, good enough to keep for my little blog, and perhaps fun and nove
 
 ## RSS
 
-`index.rss` is generated using [`html-to-rss`](https://crates.io/crates/html-to-rss). Categories, which are only present in the RSS feed, are added manually.
+`index.rss` is generated using [`html-to-rss`](https://crates.io/crates/html-to-rss)`.
 
 ## License
 
