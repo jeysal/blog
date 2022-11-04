@@ -30,4 +30,7 @@ It is, however, good enough to keep for my little blog, and perhaps fun and nove
 
 ## License
 
-The content on my blog is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+1. Some assets (such as logos of social networks) are identifiably not my intellectual property and thus I cannot license them out.
+1. Code samples presented within my blog posts are licensed under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode).
+1. The remaining content of my blog posts is licensed under [CC BY-NC-SA 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
+1. The remaining code in this repo that provides the structure of my blog around the post contents itself is licensed under [MIT](https://opensource.org/licenses/MIT).
